@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dot_size">8dp</dimen>
+    <dimen name="dot_spacing">4dp</dimen>
+    <dimen name="screen_padding">20dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+    <dimen name="text_size_title">22sp</dimen>
+    <dimen name="text_size_body">14sp</dimen>
+    <dimen name="text_size_counter">36sp</dimen>
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="overlay_corner_radius">4dp</dimen>
+    <dimen name="border_width">1dp</dimen>
+    <dimen name="section_header_size">13sp</dimen>
+</resources>

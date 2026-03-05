@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_dark">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/surface_dark"
+        android:elevation="0dp"
+        app:title="@string/settings"
+        app:titleTextColor="@color/primary"
+        app:navigationIcon="@drawable/ic_back" />
+
+    <!-- Cyan top border line under toolbar -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/border_width"
+        android:background="@color/primary" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="24dp"
+            android:paddingStart="@dimen/screen_padding"
+            android:paddingEnd="@dimen/screen_padding"
+            android:paddingBottom="@dimen/screen_padding">
+
+            <!-- Trigger Mode Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TRIGGER MODE"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/section_header_size"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.15"
+                android:paddingBottom="@dimen/padding_small" />
+
+            <RadioGroup
+                android:id="@+id/rgTriggerMode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_medium">
+
+                <RadioButton
+                    android:id="@+id/rbEveryApp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/trigger_every_app"
+                    android:textColor="@color/text_primary"
+                    android:fontFamily="monospace"
+                    android:buttonTint="@color/primary" />
+
+                <RadioButton
+                    android:id="@+id/rbHourly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/trigger_hourly"
+                    android:textColor="@color/text_primary"
+                    android:fontFamily="monospace"
+                    android:buttonTint="@color/primary" />
+
+                <RadioButton
+                    android:id="@+id/rbFirstApp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/trigger_first_app"
+                    android:textColor="@color/text_primary"
+                    android:fontFamily="monospace"
+                    android:buttonTint="@color/primary" />
+
+            </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:layout_marginTop="@dimen/padding_medium"
+                android:layout_marginBottom="@dimen/padding_medium"
+                android:background="@color/divider" />
+
+            <!-- Dismiss Mode Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DISMISS MODE"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/section_header_size"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.15"
+                android:paddingBottom="@dimen/padding_small" />
+
+            <RadioGroup
+                android:id="@+id/rgDismissMode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_medium">
+
+                <RadioButton
+                    android:id="@+id/rbAutoDismiss"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dismiss_auto"
+                    android:textColor="@color/text_primary"
+                    android:fontFamily="monospace"
+                    android:buttonTint="@color/primary" />
+
+                <RadioButton
+                    android:id="@+id/rbManualDismiss"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dismiss_manual"
+                    android:textColor="@color/text_primary"
+                    android:fontFamily="monospace"
+                    android:buttonTint="@color/primary" />
+
+            </RadioGroup>
+
+            <!-- Auto Dismiss Duration -->
+            <LinearLayout
+                android:id="@+id/autoDismissDurationLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/padding_medium"
+                android:paddingEnd="@dimen/padding_medium"
+                android:paddingTop="@dimen/padding_small">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/auto_dismiss_duration_title"
+                    android:textColor="@color/text_secondary"
+                    android:fontFamily="monospace"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvDurationValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary"
+                    android:fontFamily="monospace"
+                    android:textStyle="bold" />
+
+                <SeekBar
+                    android:id="@+id/seekBarDuration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="9"
+                    android:progress="2" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:layout_marginTop="@dimen/padding_medium"
+                android:layout_marginBottom="@dimen/padding_medium"
+                android:background="@color/divider" />
+
+            <!-- Included Apps -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="INCLUDED APPS"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/section_header_size"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.15"
+                android:paddingBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/included_apps_summary"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:paddingBottom="@dimen/padding_small" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnManageExcludedApps"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:text="Select Apps"
+                android:textColor="@color/text_primary"
+                android:fontFamily="monospace"
+                android:textSize="13sp"
+                app:cornerRadius="2dp"
+                app:backgroundTint="@color/surface_dark"
+                app:strokeColor="@color/primary"
+                app:strokeWidth="@dimen/border_width" />
+
+
+
+            <!-- About -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ABOUT"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/section_header_size"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.15"
+                android:paddingBottom="@dimen/padding_small" />
+
+            <TextView
+                android:id="@+id/tvAbout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_secondary"
+                android:fontFamily="monospace"
+                android:textSize="12sp"
+                android:paddingStart="@dimen/padding_medium"
+                android:paddingEnd="@dimen/padding_medium" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

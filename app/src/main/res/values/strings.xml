@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name -->
+    <string name="app_name">Days Left</string>
+
+    <!-- Activities -->
+    <string name="settings">Settings</string>
+
+    <!-- Accessibility Service -->
+    <string name="accessibility_service_description">Detects when apps are opened to display the Days Left overlay. This service only monitors app launches and does not read any content from your apps.</string>
+
+    <!-- Setup Screen -->
+    <string name="welcome_title">Welcome to Days Left</string>
+    <string name="welcome_message">Visualize your year, one day at a time.</string>
+    <string name="enable_permissions">Enable Permissions</string>
+    <string name="open_settings">Open Settings</string>
+
+    <!-- Overlay -->
+    <string name="days_left_title">Days Left</string>
+    <string name="days_counter">%1$d / %2$d</string>
+    <string name="dismiss">Dismiss</string>
+
+    <!-- Settings -->
+    <string name="trigger_mode_title">Trigger Mode</string>
+    <string name="trigger_mode_summary">When to show the overlay</string>
+    <string name="trigger_every_app">Every app I open</string>
+    <string name="trigger_hourly">After each hour when I open an app</string>
+    <string name="trigger_first_app">First app of the day</string>
+
+    <string name="dismiss_mode_title">Dismiss Mode</string>
+    <string name="dismiss_mode_summary">How the overlay disappears</string>
+    <string name="dismiss_auto">Auto-dismiss</string>
+    <string name="dismiss_manual">Manual dismiss</string>
+
+    <string name="auto_dismiss_duration_title">Auto-dismiss Duration</string>
+    <string name="auto_dismiss_duration_summary">%d seconds</string>
+
+    <string name="included_apps_title">Apps to Include</string>
+    <string name="included_apps_summary">Only these apps will trigger the overlay</string>
+
+    <string name="cancel">Cancel</string>
+
+    <string name="about_title">About</string>
+    <string name="about_summary">Days Left v%s</string>
+
+    <!-- Errors -->
+    <string name="error_overlay_permission">Overlay permission denied. Please enable it in Settings.</string>
+    <string name="error_accessibility_permission">Accessibility service not enabled. Please enable it in Settings.</string>
+</resources>

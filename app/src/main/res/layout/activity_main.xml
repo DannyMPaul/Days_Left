@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark"
+    tools:context=".MainActivity">
+
+    <!-- Permission Setup Screen -->
+    <ScrollView
+        android:id="@+id/permissionsLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/screen_padding">
+
+            <!-- Neon header line -->
+            <View
+                android:layout_width="60dp"
+                android:layout_height="2dp"
+                android:layout_marginBottom="24dp"
+                android:background="@color/primary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_title"
+                android:textColor="@color/primary"
+                android:textSize="26sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.08"
+                android:gravity="center"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_message"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="40dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEnableOverlay"
+                android:layout_width="260dp"
+                android:layout_height="52dp"
+                android:text="@string/enable_permissions"
+                android:textColor="@color/background_dark"
+                android:textSize="14sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="12dp"
+                app:cornerRadius="2dp"
+                app:backgroundTint="@color/primary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEnableAccessibility"
+                android:layout_width="260dp"
+                android:layout_height="52dp"
+                android:text="@string/open_settings"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:fontFamily="monospace"
+                app:cornerRadius="2dp"
+                app:backgroundTint="@color/surface_dark"
+                app:strokeColor="@color/primary"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCheckPermissions"
+                android:layout_width="260dp"
+                android:layout_height="52dp"
+                android:text="Check &amp; Proceed"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:fontFamily="monospace"
+                android:layout_marginTop="24dp"
+                app:cornerRadius="2dp"
+                app:backgroundTint="@color/surface_card"
+                app:strokeColor="@color/primary"
+                app:strokeWidth="@dimen/border_width" />
+
+            <TextView
+                android:id="@+id/tvPermissionsStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:visibility="gone"
+                tools:text="✓ Permissions granted!" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Main Content Screen -->
+    <LinearLayout
+        android:id="@+id/mainContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="@dimen/screen_padding"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Title with neon underline -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/days_left_title"
+            android:textColor="@color/primary"
+            android:textSize="20sp"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.12"
+            android:gravity="center"
+            android:layout_marginTop="8dp" />
+
+        <View
+            android:layout_width="48dp"
+            android:layout_height="@dimen/border_width"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/primary" />
+
+        <!-- Counter -->
+        <TextView
+            android:id="@+id/tvDaysCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_size_counter"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:gravity="center"
+            tools:text="54 / 365" />
+
+        <!-- Dot Grid -->
+        <com.daysleft.ui.DotGridView
+            android:id="@+id/dotGridView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="12dp"
+            android:padding="8dp" />
+
+        <!-- Buttons -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSettings"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:text="@string/settings"
+            android:textSize="13sp"
+            android:fontFamily="monospace"
+            app:cornerRadius="2dp"
+            app:backgroundTint="@color/primary"
+            android:textColor="@color/background_dark" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

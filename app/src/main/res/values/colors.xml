@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Cyberpunk App Theme Colors -->
+    <color name="background_dark">#080810</color>
+    <color name="surface_dark">#0D1117</color>
+    <color name="surface_card">#111827</color>
+    <color name="primary">#00FFFF</color>
+    <color name="primary_dim">#00CCCC</color>
+    <color name="accent_magenta">#FF00FF</color>
+    <color name="neon_border">#1A3A4A</color>
+
+    <!-- Dot Colors -->
+    <color name="dot_future">#1E3345</color>
+    <color name="dot_current">#00FFFF</color>
+    <color name="dot_past">#1A5A72</color>
+
+    <!-- UI Colors -->
+    <color name="text_primary">#F0FEFF</color>
+    <color name="text_secondary">#A8DCE8</color>
+    <color name="text_danger">#FF4D6D</color>
+    <color name="overlay_background">#EE080810</color>
+    <color name="divider">#1A3A4A</color>
+
+    <!-- Launcher Icon Colors -->
+    <color name="ic_launcher_background">#080810</color>
+</resources>
